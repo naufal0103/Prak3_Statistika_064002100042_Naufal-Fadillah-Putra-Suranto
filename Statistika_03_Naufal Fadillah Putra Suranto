@@ -1,0 +1,35 @@
+data_naufal = read.delim("clipboard")
+View(data_naufal)
+
+naufal<- data_naufal[data_naufal$Tinggi.Badan==165,]
+View(naufal)
+
+naufal$Tinggi.Badan <- ifelse(naufal$Tinggi.Badan > 160, c("tinggi"), c("pendek"))
+View(naufal)
+
+data_naufal$Jurusan <- c("Infor20")
+data_naufal$Fakultas <- c("FTI")
+View(data_naufal)
+
+data_naufal$Fakultas<-NULL
+View(data_naufal)
+
+data_naufal.namagen <- data_naufal[1:2]
+View(data_naufal.namagen)
+data_naufal.namagen1 <- data_naufal[3:4]
+View(data_naufal.namagen1)
+data_naufal.gabungan<-cbind(data_naufal.namagen,data_naufal.namagen1)
+View(data_naufal.gabungan)
+
+#NO 7
+data_baris_naufal.1sampai5 <- data_naufal[1:5,]
+View(data_baris_naufal.1sampai5)
+data_baris_naufal.25sampai30<-data_naufal[25:30,]
+View(data_baris_naufal.25sampai30)
+data_baris_naufal.gabungan<-
+  rbind(data_baris_naufal.1sampai5,data_baris_naufal.25sampai30)
+View(data_baris_naufal.gabungan)
+
+data_naufal.sort<-data_naufal[order(data_naufal$Waktu.Perjalanan),] 
+View(data_naufal.sort)
+
